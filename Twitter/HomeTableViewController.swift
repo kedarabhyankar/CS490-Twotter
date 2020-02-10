@@ -24,7 +24,7 @@ class HomeTableViewController: UITableViewController {
     
     @objc func loadTweet(){
         let apiURL = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let params = ["count":10]
+        let params = ["count":20]
         TwitterAPICaller.client?.getDictionariesRequest(url: apiURL, parameters: params, success: {(tweets:[NSDictionary]) in
             
             self.tweetLibrary.removeAll()
@@ -39,6 +39,7 @@ class HomeTableViewController: UITableViewController {
             print("Could not retrieve tweet!")
         })
     }
+    
     
     @IBAction func onLogout(_ sender: Any) {
         TwitterAPICaller.client?.logout()
