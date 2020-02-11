@@ -20,7 +20,11 @@ class TweetViewController: UIViewController {
     
     @IBAction func tweetMyTweet(_ sender: Any) {
         if(!tweetTextView.text.isEmpty){
-            TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success:{ self.dismiss(animated: true, completion: nil)}, failure: { (Error) in
+            //                TwitterAPICaller.client?.postTweet(tweetString: tweetTextView.text, success:{ self.dismiss(animated: true, completion: nil)}, failure: { (Error) in
+            //                    print("Error Posting Tweet! \(Error)")
+            //                    self.dismiss(animated: true, completion: nil)
+            TwitterAPICaller.client?.postTweet(tweetString: "Hello",
+            success:{ self.dismiss(animated: true, completion: nil)}, failure: { (Error) in
                 print("Error Posting Tweet! \(Error)")
                 self.dismiss(animated: true, completion: nil)
             })
